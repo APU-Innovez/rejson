@@ -139,6 +139,7 @@
     <ClInclude Include="path.h" />
     <ClInclude Include="redismodule.h" />
     <ClInclude Include="rejson.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="rmstrndup.h" />
     <ClInclude Include="version.h" />
     <ClInclude Include="win32_port.h" />
@@ -150,6 +151,9 @@
     <ProjectReference Include="..\deps\RedisModuleSDK\RedisModuleSDK\RedisModuleSDK.vcxproj">
       <Project>{6191759e-3ed8-4b8d-8a07-ea9f87b7c549}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ReJSON.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
