@@ -23,11 +23,11 @@ jobs:
         run: ls -R
   
       - name: Build ReJSON
-        run: cargo build --release
-        working-directory: redis_json
+        run: cargo build --release --workspace
+
 
       - name: Upload rejson.dll artifact
         uses: actions/upload-artifact@v4
         with:
           name: rejson-dll
-          path: rejson/target/release/rejson.dll
+          path: target/release/rejson.dll
