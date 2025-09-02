@@ -1,0 +1,29 @@
+name: Build ReJSON DLL
+
+on:
+  workflow_dispatch:   # bisa dijalankan manual dari tab Actions
+  push:                # jalan setiap ada commit baru
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Build ReJSON
+        run: cargo build --release
+
+      - name: Upload rejson.dll artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: rejson-dll
+          path: target/release/rejson.dll
