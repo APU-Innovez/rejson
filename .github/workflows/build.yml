@@ -19,13 +19,7 @@ jobs:
           toolchain: stable
           override: true
       
-      - name: List repo files
-        run: |
-          echo "=== ROOT ==="
-          dir
-          echo "=== RECURSIVE ==="
-          dir /s Cargo.toml 
-  
+
       - name: Build ReJSON
         run: cargo build --release
         working-directory: redis_json
