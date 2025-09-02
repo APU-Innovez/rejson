@@ -23,7 +23,7 @@ jobs:
         run: cargo build --release
 
       - name: Upload rejson.dll artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: rejson-dll
           path: target/release/rejson.dll
