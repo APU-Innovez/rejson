@@ -18,13 +18,16 @@ jobs:
         with:
           toolchain: stable
           override: true
-
+      
+      - name: List repo files
+        run: ls -R
+  
       - name: Build ReJSON
         run: cargo build --release
-        working-directory: redisjson
+        working-directory: RedisJSON
 
       - name: Upload rejson.dll artifact
         uses: actions/upload-artifact@v4
         with:
           name: rejson-dll
-          path: redisjson/target/release/rejson.dll
+          path: RedisJSON/target/release/rejson.dll
