@@ -20,7 +20,11 @@ jobs:
           override: true
       
       - name: List repo files
-        run: ls -R
+        run: |
+          echo "=== ROOT ==="
+          dir
+          echo "=== RECURSIVE ==="
+          dir /s Cargo.toml
   
       - name: Build ReJSON
         run: cargo build --release --workspace
