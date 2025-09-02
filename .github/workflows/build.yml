@@ -21,9 +21,10 @@ jobs:
 
       - name: Build ReJSON
         run: cargo build --release
+        working-directory: redisjson
 
       - name: Upload rejson.dll artifact
         uses: actions/upload-artifact@v4
         with:
           name: rejson-dll
-          path: target/release/rejson.dll
+          path: redisjson/target/release/rejson.dll
